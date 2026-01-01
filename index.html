@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="BUPT Reasoning Lab - 专注于大模型推理研究的实验室">
+  <meta property="og:title" content="BUPT Reasoning Lab"/>
+  <meta property="og:description" content="北京邮电大学推理实验室 - 专注于领域知识推理与AI4Science研究"/>
+  <meta property="og:url" content="https://bupt-reasoning-lab.github.io/"/>
+  <meta property="og:image" content="static/images/lab-banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="BUPT Reasoning Lab">
+  <meta name="twitter:description" content="北京邮电大学推理实验室 - 专注于领域知识推理与AI4Science研究">
+  <meta name="twitter:image" content="static/images/lab-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="BUPT, Reasoning Lab, Large Language Models, Multimodal LLMs, AI4Science">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BUPT Reasoning Lab</title>
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">BUPT Reasoning Lab</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">首页</a></li>
+        <li><a href="#publications" class="nav-link">研究成果</a></li>
+        <li><a href="#team" class="nav-link">团队成员</a></li>
+        <li><a href="#contact" class="nav-link">联系我们</a></li>
+      </ul>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <h1 class="hero-title">
+          <span class="title-line">BUPT Reasoning Lab</span>
+          <span class="title-subtitle">北京邮电大学推理实验室</span>
+        </h1>
+        <p class="hero-description">
+          专注于领域知识推理与多模态大语言模型研究<br>
+          致力于推动大模型在金融、医疗、科研诚信、AI4Science等垂直领域的应用与发展
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">顶级会议论文</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3200+</div>
+            <div class="stat-label">Google Scholar 引用</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="publications">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">研究成果</h2>
+        <p class="section-subtitle">我们在金融推理领域的最新研究成果</p>
+      </div>
+      <div class="publications-grid">
+        <!-- FinanceReasoning Card -->
+        <div class="paper-card" data-href="https://bupt-reasoning-lab.github.io/FinanceReasoning/">
+          <div class="card-header">
+            <div class="card-badge badge-acl">ACL 2025</div>
+            <div class="card-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+          <h3 class="card-title">FinanceReasoning</h3>
+          <p class="card-subtitle">Benchmarking Financial Numerical Reasoning More Credible, Comprehensive and Challenging</p>
+          <p class="card-description">
+            一个新颖的基准测试，用于评估大型推理模型（LRMs）在金融数值推理问题中的推理能力，具有增强的严谨性和开源函数库。
+          </p>
+          <div class="card-features">
+            <span class="feature-tag">可信性</span>
+            <span class="feature-tag">全面性</span>
+            <span class="feature-tag">挑战性</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://bupt-reasoning-lab.github.io/FinanceReasoning/" class="card-link">
+              查看详情 <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FinMMR Card -->
+        <div class="paper-card" data-href="https://bupt-reasoning-lab.github.io/FinMMR/">
+          <div class="card-header">
+            <div class="card-badge badge-iccv">ICCV 2025</div>
+            <div class="card-icon">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <h3 class="card-title">FinMMR</h3>
+          <p class="card-subtitle">Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging</p>
+          <p class="card-description">
+            一个新颖的双语多模态基准测试，涵盖14个子领域和多样化的图表类型，旨在推进MLLMs在真实世界金融推理场景中的能力。
+          </p>
+          <div class="card-features">
+            <span class="feature-tag">多模态</span>
+            <span class="feature-tag">双语</span>
+            <span class="feature-tag">14子领域</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://bupt-reasoning-lab.github.io/FinMMR/" class="card-link">
+              查看详情 <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FinMMDocR Card -->
+        <div class="paper-card" data-href="https://bupt-reasoning-lab.github.io/FinMMDocR/">
+          <div class="card-header">
+            <div class="card-badge badge-aaai">AAAI 2026</div>
+            <div class="card-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+          </div>
+          <h3 class="card-title">FinMMDocR</h3>
+          <p class="card-subtitle">Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation</p>
+          <p class="card-description">
+            一个新颖的双语多模态基准测试，用于评估MLLMs在金融数值推理中的表现，具有场景感知、文档理解和多步计算的特点。
+          </p>
+          <div class="card-features">
+            <span class="feature-tag">场景感知</span>
+            <span class="feature-tag">文档理解</span>
+            <span class="feature-tag">多步计算</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://bupt-reasoning-lab.github.io/FinMMDocR/" class="card-link">
+              查看详情 <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">团队成员</h2>
+        <p class="section-subtitle">我们的研究团队</p>
+      </div>
+      <div class="team-grid">
+        <!-- Lab Director -->
+        <div class="member-card" data-href="https://teacher.bupt.edu.cn/ehaihong/zh_CN">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">
+              <i class="fas fa-user-tie"></i>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">鄂海红</h3>
+            <p class="member-role">实验室负责人</p>
+            <p class="member-bio">北京邮电大学计算机学院（国家示范性软件学院）教授，专注于大数据、人工智能与推理技术研究</p>
+            <div class="member-links">
+              <a href="https://teacher.bupt.edu.cn/ehaihong/zh_CN" target="_blank" class="member-link">
+                <i class="fas fa-external-link-alt"></i> 个人主页
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Member -->
+        <div class="member-card" data-href="https://zichentang.github.io/">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">汤子辰</h3>
+            <p class="member-role">博士研究生</p>
+            <p class="member-bio">专注于领域知识推理与多模态大语言模型研究，已发表7篇顶级会议论文，Google Scholar引用220+</p>
+            <div class="member-links">
+              <a href="https://zichentang.github.io/" target="_blank" class="member-link">
+                <i class="fas fa-external-link-alt"></i> 个人主页
+              </a>
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=aRCZ6dMAAAAJ" target="_blank" class="member-link">
+                <i class="ai ai-google-scholar"></i> Google Scholar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">联系我们</h2>
+        <p class="section-subtitle">欢迎学术合作与交流</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="contact-title">邮箱</h3>
+          <p class="contact-info">ehaihong@bupt.edu.cn</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="contact-title">地址</h3>
+          <p class="contact-info">北京市海淀区西土城路10号<br>北京邮电大学计算机学院（国家示范性软件学院）</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <h3 class="contact-title">GitHub</h3>
+          <p class="contact-info">
+            <a href="https://github.com/BUPT-Reasoning-Lab" target="_blank" class="contact-link">
+              BUPT-Reasoning-Lab
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">BUPT Reasoning Lab</span>
+        </div>
+        <p class="footer-text">
+          © 2026 BUPT Reasoning Lab. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/BUPT-Reasoning-Lab" target="_blank" class="footer-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/main.js"></script>
+</body>
+</html>
+
