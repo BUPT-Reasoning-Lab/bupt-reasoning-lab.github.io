@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const languageToggle = document.querySelector('.language-toggle');
   const savedLanguage = window.localStorage ? localStorage.getItem('siteLanguage') : null;
-  let currentLanguage = savedLanguage === 'en' ? 'en' : 'zh';
+  let currentLanguage = savedLanguage === 'zh' ? 'zh' : 'en';
   let translations = null;
 
   function applyLanguage(language) {
