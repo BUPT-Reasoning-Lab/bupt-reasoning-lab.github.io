@@ -79,7 +79,7 @@ python3 -m http.server 8000
 
 ### 维护中英文文案
 
-本项目使用 `data-i18n` 属性和 `static/data/translations.json` 维护中英文切换。
+本项目使用 `data-i18n` 属性和 `static/data/translations.json` 维护中英文切换。页面默认显示英文；用户手动切换语言后，浏览器会通过 `localStorage` 记住选择。
 
 1. 在 `index.html` 中给需要翻译的元素添加唯一 key：
 
