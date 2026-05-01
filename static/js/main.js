@@ -3,6 +3,54 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+  const languageToggle = document.querySelector('.language-toggle');
+  const savedLanguage = window.localStorage ? localStorage.getItem('siteLanguage') : null;
+  let currentLanguage = savedLanguage === 'en' ? 'en' : 'zh';
+  let translations = null;
+
+  function applyLanguage(language) {
+    if (!translations || !translations[language]) {
+      return;
+    }
+
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translatedText = translations[language][key];
+      if (translatedText) {
+        element.innerHTML = translatedText;
+      }
+    });
+    if (languageToggle) {
+      languageToggle.setAttribute('aria-label', language === 'en' ? 'Switch to Chinese' : 'Switch to English');
+    }
+    if (window.localStorage) {
+      localStorage.setItem('siteLanguage', language);
+    }
+  }
+
+  if (languageToggle) {
+    languageToggle.addEventListener('click', () => {
+      currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+      applyLanguage(currentLanguage);
+    });
+  }
+
+  fetch('static/data/translations.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load translations: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      translations = data;
+      applyLanguage(currentLanguage);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+
   // Navigation scroll effect
   const navbar = document.querySelector('.navbar');
   let lastScroll = 0;
@@ -114,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, observerOptions);
 
   // Observe all cards for fade-in effect
-  const cards = document.querySelectorAll('.paper-card, .member-card, .contact-card');
+  const cards = document.querySelectorAll('.product-card, .paper-card, .member-card, .contact-card');
   cards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
@@ -127,17 +175,5 @@ document.addEventListener('DOMContentLoaded', function() {
     card.style.transitionDelay = `${index * 0.1}s`;
   });
 
-  // Parallax effect for hero section
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - scrolled / window.innerHeight;
-      }
-    });
-  }
+  // The featured product hero contains interactive media, so it scrolls in the normal document flow.
 });
-

@@ -79,7 +79,10 @@ bupt-reasoning-lab.github.io/
 │   │   └── style.css   # 样式文件
 │   ├── js/
 │   │   └── main.js     # JavaScript 文件
-│   └── images/         # 图片文件夹（可选）
+│   ├── data/
+│   │   └── translations.json # 中英文翻译文案
+│   ├── images/         # 图片文件夹（可选）
+│   └── videos/         # 视频文件夹（可选）
 └── README.md           # 说明文档（可选）
 ```
 
@@ -108,12 +111,36 @@ bupt-reasoning-lab.github.io/
 - 个人主页链接
 - Google Scholar 链接（如果有）
 
+如果修改需要中英文切换的成员文案，请同步更新 `static/data/translations.json`。
+
+### 更新首页重点项目
+
+在 `index.html` 中找到 `#home` 区块，修改：
+- 产品名称和简介
+- Demo 访问按钮和当前访问地址
+- Demo 视频 `<video>` 的 `source` 路径
+- 正式域名状态说明
+
+如果替换视频，请将 `.mp4` 文件放入 `static/videos/`。建议控制视频文件大小，避免影响页面加载。
+
+如果修改需要中英文切换的产品文案，请同步更新 `static/data/translations.json`。
+
 ### 更新联系方式
 
 在 `index.html` 中找到 `.contact-card` 部分，修改：
 - 邮箱地址
 - 实验室地址
 - GitHub 组织链接
+
+### 维护中英文文案
+
+本项目使用 `data-i18n` 属性和 `static/data/translations.json` 维护中英文切换。
+
+新增或修改可翻译文案时：
+
+1. 在 `index.html` 中添加或修改对应元素的 `data-i18n` key
+2. 在 `static/data/translations.json` 的 `zh` 和 `en` 中同步维护同名 key
+3. 本地预览时使用 HTTP 服务器访问页面，不要直接双击打开 `index.html`
 
 ## 🔄 更新内容
 
@@ -135,8 +162,10 @@ GitHub Pages 会自动重新部署（通常需要 1-2 分钟）。
 1. **仓库名称必须精确匹配**：`bupt-reasoning-lab.github.io`（区分大小写）
 2. **分支名称**：确保使用 `main` 分支（GitHub 默认）
 3. **文件路径**：确保所有静态资源路径使用相对路径
-4. **HTTPS**：GitHub Pages 自动提供 HTTPS，无需额外配置
-5. **自定义域名**（可选）：可以在 `Settings > Pages > Custom domain` 中配置
+4. **本地预览**：语言切换会通过 `fetch` 加载 JSON，请使用 `python3 -m http.server 8000`
+5. **视频资源**：GitHub Pages 可以托管小型 `.mp4` 文件，但过大的视频会影响加载体验
+6. **HTTPS**：GitHub Pages 自动提供 HTTPS，无需额外配置
+7. **自定义域名**（可选）：可以在 `Settings > Pages > Custom domain` 中配置
 
 ## 🐛 常见问题
 
@@ -158,6 +187,18 @@ GitHub Pages 会自动重新部署（通常需要 1-2 分钟）。
 - 检查图片路径是否正确
 - 确认图片文件大小不超过 100MB（GitHub 限制）
 
+### 问题 4: 语言切换不生效
+
+- 确认 `static/data/translations.json` 已上传
+- 确认浏览器控制台没有 JSON 加载错误
+- 本地预览时请使用 HTTP 服务器，不要直接双击打开 `index.html`
+
+### 问题 5: 视频不显示
+
+- 确认视频文件已上传到 `static/videos/`
+- 检查 `index.html` 中 `<video>` 的 `source` 路径是否正确
+- 确认视频格式为浏览器支持的 `.mp4`
+
 ## 📚 相关链接
 
 - [GitHub Pages 文档](https://docs.github.com/en/pages)
@@ -171,6 +212,8 @@ GitHub Pages 会自动重新部署（通常需要 1-2 分钟）。
 - ✅ 响应式设计，支持移动端和桌面端
 - ✅ 现代化的 UI 设计，参考 OpenAI、Anthropic 等公司风格
 - ✅ 流畅的动画效果和交互
+- ✅ 首页重点项目展示和 Demo 视频播放器
+- ✅ 中英文切换，翻译文案集中维护
 - ✅ 论文卡片展示，点击可跳转到论文主页
 - ✅ 团队成员卡片，可跳转到个人主页
 - ✅ 联系方式展示
@@ -179,4 +222,3 @@ GitHub Pages 会自动重新部署（通常需要 1-2 分钟）。
 ---
 
 如有问题，请检查 GitHub Pages 的构建日志或联系维护人员。
-
